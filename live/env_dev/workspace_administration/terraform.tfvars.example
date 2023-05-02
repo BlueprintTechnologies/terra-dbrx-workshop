@@ -1,0 +1,4 @@
+additional_user = {
+    user_name = "user@example.com"
+    display_name = "Example User"
+}
