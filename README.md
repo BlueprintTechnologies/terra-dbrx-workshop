@@ -1,5 +1,5 @@
 ## Introduction 
-___
+
 This repo is a quick start for setting up a new Databricks workspace, accompanying storage account, keyvault, and managed identity via an access connector.  It also configures a new metastore for your Azure region of choice and provides examples of creating workspace administration resources such as additional user(s), assigning a user to a workspace group, clusters, etc.
 
 ## Getting Started
@@ -20,7 +20,7 @@ ___
 
 High-level resources created
 
-![alt text](resources.png "These are resources")
+![alt text](img/resources.png "These are resources")
 
 
 

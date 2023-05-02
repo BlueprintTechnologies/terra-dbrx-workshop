@@ -1,1 +1,1 @@
-soon(tm)
+soon<sup>tm</sup>

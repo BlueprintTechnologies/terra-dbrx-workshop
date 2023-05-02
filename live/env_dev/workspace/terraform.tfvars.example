@@ -1,0 +1,23 @@
+## General
+app_name      = "devworkspace"
+location = "westus3"
+environment   = "dev"
+tags = {    
+    Owner     = "Me"
+    Purpose   = "Example"
+}
+
+## storage
+stg_account_name = "examplestg"
+stg_container_name = "data"
+stg_account_tier = "Standard"
+stg_account_replication_type = "GRS"
+stg_account_kind = "StorageV2"
+stg_is_hns_enabled = "true"
+
+## Databricks
+databricks_sku = "premium"
+
+## Keyvault
+kv_sku_name  = "standard"
+kv_soft_delete_retention_days = 7
