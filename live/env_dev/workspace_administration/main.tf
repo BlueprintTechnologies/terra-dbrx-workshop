@@ -1,6 +1,6 @@
 locals {}
 
-data "databricks_spark_version" "latest" {}
+
 data "databricks_node_type" "smallest" {
   local_disk = true
 }
@@ -17,17 +17,9 @@ resource "databricks_secret_scope" "kvss" {
   }
 }
 
-### fill in example
-/*
-resource "databricks_notebook" "notebook_example" {
-  path     = "${data.databricks_current_user.me.home}/Terraform"
-  language = "PYTHON"
-}
-*/
-
 resource "databricks_cluster" "hold_me_closer_tiny_cluster" {
     cluster_name = "cluster example"
-    spark_version             = data.databricks_spark_version.latest.id
+    spark_version             = "12.0.x-scala2.12"
     node_type_id              = data.databricks_node_type.smallest.id
     autotermination_minutes   = 10
     data_security_mode        = "USER_ISOLATION"
@@ -60,4 +52,7 @@ resource "databricks_external_location" "ext_stg" {
   url = var.ext_storage_url
   credential_name = databricks_storage_credential.external_mi.id
   comment         = "Managed by terraform"
+  depends_on = [ 
+    databricks_storage_credential.external_mi 
+  ]
 }

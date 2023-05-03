@@ -54,24 +54,6 @@ module "workspace_storage" {
   ]
 }
 
-resource azurerm_key_vault_access_policy "user_kv_permissions" {
-    key_vault_id = module.workspace_keyvault.keyvault_id
-    tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azurerm_client_config.current.object_id
-
-    key_permissions = [
-      "Get", "List", "Create"
-    ]
-
-    secret_permissions = [
-      "Backup", "Delete", "Get", "List", "Purge", "Recover", "Restore", "Set"
-    ]
-
-    storage_permissions = [
-      "Get",
-    ]
-}
-
 resource azurerm_key_vault_access_policy "sp_kv_permissions" {
     key_vault_id = module.workspace_keyvault.keyvault_id
     tenant_id = data.azurerm_client_config.current.tenant_id
