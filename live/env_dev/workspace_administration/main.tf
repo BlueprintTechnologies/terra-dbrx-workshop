@@ -52,7 +52,4 @@ resource "databricks_external_location" "ext_stg" {
   url = var.ext_storage_url
   credential_name = databricks_storage_credential.external_mi.id
   comment         = "Managed by terraform"
-  depends_on = [ 
-    databricks_storage_credential.external_mi 
-  ]
 }
