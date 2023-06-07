@@ -17,7 +17,7 @@ resource "databricks_secret_scope" "kvss" {
   }
 }
 
-resource "databricks_cluster" "hold_me_closer_tiny_cluster" {
+resource "databricks_cluster" "tiny_cluster" {
     cluster_name = "cluster example"
     spark_version             = "12.0.x-scala2.12"
     node_type_id              = data.databricks_node_type.smallest.id

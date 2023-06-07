@@ -50,5 +50,6 @@ ext_storage_url = `"$ext_storage_url`"
 "
 $fileContents | out-file $varFileLocation -Force -Encoding utf8
 
+# using a var file to reduce CLI argument clutter 
 #terraform plan -var workspace_url="$workspace_url" -var access_connector_id="$access_connector_id" -var workspace_id="$workspace_id" -var auth_token="$aad_pat" -out workspace_admin.plan
 terraform apply -var-file="$varFileName" -var auth_token="$aad_pat"
