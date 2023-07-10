@@ -1,0 +1,4 @@
+resource_group_name  = "resource-group-name"
+storage_account_name = "storageaccountname"
+container_name       = "tfstate"
+key                  = "metastore_dev.tfstate"

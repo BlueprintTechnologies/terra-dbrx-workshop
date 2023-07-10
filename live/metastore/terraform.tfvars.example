@@ -1,0 +1,24 @@
+resource_group_name = "bp-workshop-dev-rg" # auxillary resource group name, must exit already
+
+metastore_name = "bp-eastus-metastore"
+metastore_owner = "admingroupname"
+
+stg_account_name = "bpeastusmetastorestg"
+stg_container_name = "metastore"
+stg_account_tier = "Standard"
+stg_account_replication_type = "ZRS"
+stg_account_kind = "StorageV2" 
+stg_is_hns_enabled = "true" # required for metastore
+
+
+tags = {
+    Owner = "Shannon Lowder"
+    Purpose = "To store EastUS metastore data."
+}
+
+ 
+
+#   other variables required but passed in via CLI
+#   workspace_url
+#   workspace_id
+#   access_connector_id
